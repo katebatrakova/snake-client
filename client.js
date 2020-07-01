@@ -10,9 +10,9 @@ const connect = function () {
   // interpret incoming data as text
   conn.setEncoding('utf8');
   //attach event handler to handle incoming data ans console.log data to the player
-  conn.on('data', (data) => {
-    console.log(data);
-  });
+  // conn.on('data', (data) => {
+  //   console.log(data);
+  // });
   //register a "connect" handler (a callback function)
   conn.on('connect', (connect) => {
     console.log("Successfully connected to game server");
@@ -21,7 +21,7 @@ const connect = function () {
   conn.on('connect', (connect) => {
     conn.write('Name: KB');
   });
-  // conn.on('connect', () => {
+  // conn.on('connect', (connect) => {
   //   conn.write('Move: up');
   // });
   return conn;

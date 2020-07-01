@@ -7,9 +7,10 @@ const { connect } = require('./client'); //same as const connect = require('./cl
 const { setupInput } = require('./input');
 
 console.log('Connecting ...');
-connect();
 
-setupInput();
+// const conn = connect();
+//Update to send the connection object returned from connect() into our setupInput() function.
+setupInput(connect());
 
 
 
