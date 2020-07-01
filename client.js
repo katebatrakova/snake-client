@@ -13,6 +13,17 @@ const connect = function () {
   conn.on('data', (data) => {
     console.log(data);
   });
+  //register a "connect" handler (a callback function)
+  conn.on('connect', (connect) => {
+    console.log("Successfully connected to game server");
+  });
+  //upon connection Client Can Send a Reply
+  conn.on('connect', (connect) => {
+    conn.write('Name: KB');
+  });
+  // conn.on('connect', () => {
+  //   conn.write('Move: up');
+  // });
   return conn;
 }
 
